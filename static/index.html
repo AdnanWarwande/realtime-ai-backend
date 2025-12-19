@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time AI Backend - Demo</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Real-Time AI Chat</h1>
+            <p class="subtitle">WebSocket + Google Gemini + Supabase</p>
+        </header>
+
+        <div class="connection-panel">
+            <div class="status-indicator" id="status">
+                <span class="status-dot offline"></span>
+                <span id="statusText">Disconnected</span>
+            </div>
+            <button id="connectBtn" class="btn btn-primary">Start Session</button>
+            <button id="disconnectBtn" class="btn btn-secondary" disabled>End Session</button>
+        </div>
+
+        <div id="chatContainer" class="chat-container" style="display: none;">
+            <div id="messages" class="messages"></div>
+
+            <div class="input-container">
+                <textarea id="messageInput" placeholder="Type your message here..." rows="2"></textarea>
+                <button id="sendBtn" class="btn btn-send" disabled>Send</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>💡 Try these commands:</h3>
+            <ul>
+                <li>"What's the weather in Mumbai?"</li>
+                <li>"Check stock price of Apple"</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/static/app.js?v=2"></script>
+</body>
+
+</html>
