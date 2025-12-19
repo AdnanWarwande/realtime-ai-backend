@@ -12,7 +12,8 @@ const statusDot = document.querySelector('.status-dot');
 
 connectBtn.onclick = () => {
     currentSessionId = 'user_' + Math.random().toString(36).substring(2, 11);
-    ws = new WebSocket(`ws://${window.location.host}/ws/session/${currentSessionId}`);
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    ws = new WebSocket(`${protocol}//${window.location.host}/ws/session/${currentSessionId}`);
 
     statusText.textContent = "Connecting...";
 
